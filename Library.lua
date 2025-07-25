@@ -5339,6 +5339,29 @@ function Library:CreateWindow(...)
         Parent = ScreenGui;
     });
     LibraryMainOuterFrame = Outer;
+    
+    -- Add shadow/glow effect
+    local Shadow = Library:Create('ImageLabel', {
+        Name = "\0";
+        ImageColor3 = Library.AccentColor;
+        ScaleType = Enum.ScaleType.Slice;
+        ImageTransparency = 0.2;
+        BorderColor3 = Color3.new(0, 0, 0);
+        BackgroundColor3 = Color3.new(1, 1, 1);
+        Size = UDim2.new(1, 25, 1, 25);
+        AnchorPoint = Vector2.new(0.5, 0.5);
+        Image = "http://www.roblox.com/asset/?id=18245826428";
+        BackgroundTransparency = 1;
+        Position = UDim2.new(0.5, 0, 0.5, 0);
+        ZIndex = -1;
+        BorderSizePixel = 0;
+        SliceCenter = Rect.new(Vector2.new(21, 21), Vector2.new(79, 79));
+        Parent = Outer;
+    });
+    
+    -- Add shadow to registry so it gets toggled with the UI
+    Library:AddToRegistry(Shadow, {});
+    
     Library:MakeDraggable(Outer, 25, true);
 
     if Config.Resizable then
