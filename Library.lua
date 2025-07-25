@@ -5343,7 +5343,7 @@ function Library:CreateWindow(...)
     -- Add shadow/glow effect
     local Shadow = Library:Create('ImageLabel', {
         Name = "\0";
-        ImageColor3 = Color3.new(50,50,50);
+        ImageColor3 = Color3.new(20,20,20);
         ScaleType = Enum.ScaleType.Slice;
         ImageTransparency = 0.2;
         BorderColor3 = Color3.new(0, 0, 0);
